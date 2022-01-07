@@ -6,11 +6,11 @@
 An app that lets you to save your favourite locations and access them on the home screen. You can add a new place by long click on the map or even use the search bar on top to search a location.
 
 ## Demonstration
-### Add a new location
+### Add a new location:
 ![Image](https://github.com/Chong1455/Memorable-places/blob/main/screenshots/add.jpg)
-### Search a location
+### Search a location:
 ![Image](https://github.com/Chong1455/Memorable-places/blob/main/screenshots/search.JPG)
-### Access saved location
+### Access saved location:
 ![Image](https://github.com/Chong1455/Memorable-places/blob/main/screenshots/access.JPG)
 
 # Deployed version
