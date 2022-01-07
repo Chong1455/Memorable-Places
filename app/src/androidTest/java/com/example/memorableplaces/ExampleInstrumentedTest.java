@@ -1,4 +1,4 @@
-package com.example.memorableplaces;
+package com.cks.memorableplaces;
 
 import android.content.Context;
 

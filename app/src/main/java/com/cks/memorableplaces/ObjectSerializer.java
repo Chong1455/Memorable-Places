@@ -1,6 +1,4 @@
-package com.example.memorableplaces;
-
-import android.util.Log;
+package com.cks.memorableplaces;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;

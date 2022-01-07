@@ -1,4 +1,4 @@
-package com.example.memorableplaces;
+package com.cks.memorableplaces;
 
 import androidx.annotation.NonNull;
 import androidx.core.app.ActivityCompat;
@@ -17,6 +17,8 @@ import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -25,7 +27,7 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
-import com.example.memorableplaces.databinding.ActivityMapsBinding;
+import com.cks.memorableplaces.databinding.ActivityMapsBinding;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -74,6 +76,31 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+    }
+
+    public void onMapSearch(View view) {
+        EditText locationSearch = (EditText) findViewById(R.id.editText);
+        String location = locationSearch.getText().toString();
+        List<Address> addressList = null;
+
+        if (location != null || !location.equals("")) {
+            Geocoder geocoder = new Geocoder(this);
+            try {
+                addressList = geocoder.getFromLocationName(location, 1);
+
+            } catch (Exception e) {
+                Toast.makeText(this, "Location not found :(", Toast.LENGTH_SHORT).show();
+                e.printStackTrace();
+            }
+            if (addressList.size() > 0) {
+                Address address = addressList.get(0);
+                LatLng latLng = new LatLng(address.getLatitude(), address.getLongitude());
+                mMap.addMarker(new MarkerOptions().position(latLng).title(location));
+                mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, 12));
+            } else {
+                Toast.makeText(this, "Location not found :(", Toast.LENGTH_SHORT).show();
+            }
+        }
     }
 
     @Override
@@ -126,7 +153,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 }
             }
         } catch (Exception e) {
-            Log.i("Info", "ERRORRRRR");
             e.printStackTrace();
         }
         Log.i("Info", "hello");

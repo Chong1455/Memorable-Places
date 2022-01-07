@@ -1,4 +1,4 @@
-package com.example.memorableplaces;
+package com.cks.memorableplaces;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,11 +10,9 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import com.google.android.gms.maps.model.LatLng;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
@@ -52,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
             }
         }
         else {
-            places.add("Add a new place...");
+            places.add("Click to add a new place...");
             locations.add(new LatLng(0, 0));
         }
 
