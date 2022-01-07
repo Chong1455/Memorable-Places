@@ -22,4 +22,4 @@ Please install or have installed the following:
 
 # How to use
 1. Clone this repo
-2. Run th app on an Android Virtual Device (AVD) in Android Studio to view the app.
+2. Run the app on an Android Virtual Device (AVD) in Android Studio to view the app.
