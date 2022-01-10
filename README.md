@@ -1,7 +1,6 @@
 # Memorable Locations
 
 # Summary
-![Image](https://github.com/Chong1455/vue-portfolio/blob/master/src/assets/project13.png)
 
 An app that lets you to save your favourite locations and access them on the home screen. You can add a new place by long click on the map or even use the search bar on top to search a location.
 
